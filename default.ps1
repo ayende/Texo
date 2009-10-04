@@ -1,8 +1,6 @@
 properties { 
   $base_dir  = resolve-path .
   $lib_dir = "$base_dir\SharedLibs"
-  $build_dir = "$base_dir\build" 
-  $buildartifacts_dir = "$build_dir\" 
   $sln_file = "$base_dir\Texo.sln" 
   $version = "1.0.0.0"
   $humanReadableversion = "1.0"
@@ -17,7 +15,6 @@ include .\psake_ext.ps1
 task default -depends Release
 
 task Clean { 
-  remove-item -force -recurse $buildartifacts_dir -ErrorAction SilentlyContinue 
   remove-item -force -recurse $release_dir -ErrorAction SilentlyContinue 
 } 
 
@@ -33,25 +30,24 @@ task Init -depends Clean {
 		-copyright "Hibernating Rhinos & Ayende Rahien 2009"
 
 	new-item $release_dir -itemType directory 
-	new-item $buildartifacts_dir -itemType directory 
 } 
 
 task Compile -depends Init { 
-  exec msbuild "/p:OutDir=""$buildartifacts_dir "" $sln_file"
+  exec msbuild $sln_file
 } 
 
 
-task Release  -depends Compile {
-	& $tools_dir\zip.exe -9 -A -j `
+task Release -depends Compile {
+	& $tools_dir\zip.exe -9 -A `
 		$release_dir\Texo-$humanReadableversion-Build-$env:buildlabel.zip `
-		$build_dir\bin\*.dll `
-		$build_dir\Web.config `
-		$build_dir\Settings.config `
-		$build_dir\GitUpdate.ashx `
-		$build_dir\Builder.ps1 `
-		license.txt `
-		readme.txt `
-		acknowledgements.txt
+		$base_dir\Texo\bin\*.dll `
+		$base_dir\Texo\Web.config `
+		$base_dir\Texo\Settings.config `
+		$base_dir\Texo\GitUpdate.ashx `
+		$base_dir\Texo\Builder.ps1 `
+		$base_dir\license.txt `
+		$base_dir\readme.txt `
+		$base_dir\acknowledgements.txt
 		
 	if ($lastExitCode -ne 0) {
         throw "Error: Failed to execute ZIP command"
@@ -59,9 +55,10 @@ task Release  -depends Compile {
 }
 
 task Upload -depend Release {
-	if (Test-Path $uploadScript ) {
+	Write-Host "Starting upload"
+	if (Test-Path $uploader) {
 		$log = git log -n 1 --oneline		
-		msbuild $uploadScript /p:Category=$uploadCategory "/p:Comment=$log" "/p:File=$release_dir\Texo-$humanReadableversion-Build-$env:ccnetnumericlabel.zip"
+		&$uploader "$uploadCategory" "$release_dir\NHibernate.Profiler-$humanReadableversion-Build-$env:buildlabel.zip" "$log"
 		
 		if ($lastExitCode -ne 0) {
 			throw "Error: Failed to publish build"
