@@ -1,0 +1,26 @@
+﻿<settings>
+  <email>
+    <smtpServer>smtp.gmail.com</smtpServer>
+    <username>ayende@ayende.com</username>
+    <password>Rahien</password>
+    <useSSL>true</useSSL>
+    <port>587</port>
+    <from>ayende@ayende.com</from>
+  </email>
+  <project
+    url="http://github.com/ayende/NHProf"
+    name="NHProf"
+    git="git@github.com:ayende/NHProf.git"
+    cmd="powershell .\psake.ps1"
+    build="457"
+    workingDir="C:\Builds\NHProf"
+    email="ayende@ayende.com" />
+  <project
+    url="http://github.com/ayende/Impleo"
+    name="Impleo"
+    build="3"
+    git="git@github.com:ayende/Impleo.git"
+    cmd="powershell .\psake.ps1"
+    workingDir="C:\Builds\Impleo"
+    email="ayende@ayende.com" />
+</settings>

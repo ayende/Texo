@@ -1,0 +1,1335 @@
+Starting build for https://github.com/ayende/NHProf at 10/3/2009 7:04:44 PMPID: 8592
+Found settings for  System.Xml.XmlElement.name
+Fetching updates from C:\Work\NHProf
+Already up-to-date.
+Build started for NHProf
+Build passed for NHProf. Duration 00:14:07.9635007 for:
+234c0ff Will only update build # when pushing for production
+25ed17f Adding support for NOT contains filter
+
+
+Executing task, Clean...
+Executing task, Init...
+Generating assembly info file: C:\Builds\NHProf\HibernatingRhinos.NHibernate.Profiler.Appender\Properties\AssemblyInfo.cs
+Generating assembly info file: C:\Builds\NHProf\HibernatingRhinos.NHibernate.Profiler.BackEnd\Properties\AssemblyInfo.cs
+Generating assembly info file: C:\Builds\NHProf\HibernatingRhinos.NHibernate.Profiler.Client\Properties\AssemblyInfo.cs
+Generating assembly info file: C:\Builds\NHProf\HibernatingRhinos.NHibernate.Profiler.IntegrationTests\Properties\AssemblyInfo.cs
+Generating assembly info file: C:\Builds\NHProf\HibernatingRhinos.NHibernate.Profiler.Java.IntegrationTests\Properties\AssemblyInfo.cs
+Generating assembly info file: C:\Builds\NHProf\HibernatingRhinos.NHibernate.Profiler.Tests\Properties\AssemblyInfo.cs
+Generating assembly info file: C:\Builds\NHProf\HibernatingRhinos.NHibernate.Profiler.ViewTests\Properties\AssemblyInfo.cs
+
+
+    Directory: C:\Builds\NHProf
+
+
+Mode                LastWriteTime     Length Name                              
+----                -------------     ------ ----                              
+d----         10/3/2009   7:04 PM            Release                           
+d----         10/3/2009   7:04 PM            build                             
+Executing task, Compile...
+building java appender
+Buildfile: build.xml
+
+clean:
+   [delete] Deleting directory C:\Builds\NHProf\Hibernate.Appender\build-main
+   [delete] Deleting directory C:\Builds\NHProf\Hibernate.Appender\dist
+   [delete] Deleting directory C:\Builds\NHProf\Hibernate.Appender\build-test
+   [delete] Deleting directory C:\Builds\NHProf\Hibernate.Appender\build-integr
+ation
+   [delete] Deleting directory C:\Builds\NHProf\Hibernate.Appender\reports
+
+init:
+    [mkdir] Created dir: C:\Builds\NHProf\Hibernate.Appender\build-main
+
+generate-sources:
+
+compile:
+    [javac] Compiling 53 source files to C:\Builds\NHProf\Hibernate.Appender\bu
+ild-main
+    [javac] C:\Builds\NHProf\Hibernate.Appender\src\main\java\hibernatingrhinos
+\hibernate\profiler\appender\HibernateStatisticsProvider.java:39: warning: non-
+varargs call of varargs method with inexact argument type for last parameter;
+    [javac] cast to java.lang.Class<?> for a varargs call
+    [javac] cast to java.lang.Class<?>[] for a non-varargs call and to suppress
+ this warning
+    [javac]             Method method = instances.getClass().getMethod("values"
+, null);
+    [javac]                                                                    
+  ^
+    [javac] C:\Builds\NHProf\Hibernate.Appender\src\main\java\hibernatingrhinos
+\hibernate\profiler\appender\HibernateStatisticsProvider.java:40: warning: non-
+varargs call of varargs method with inexact argument type for last parameter;
+    [javac] cast to java.lang.Object for a varargs call
+    [javac] cast to java.lang.Object[] for a non-varargs call and to suppress t
+his warning
+    [javac]             Collection sessionFactories = (Collection)method.invoke
+(instances, null);
+    [javac]                                                                    
+            ^
+    [javac] C:\Builds\NHProf\Hibernate.Appender\src\main\java\hibernatingrhinos
+\hibernate\profiler\appender\HibernateStatisticsProvider.java:46: warning: non-
+varargs call of varargs method with inexact argument type for last parameter;
+    [javac] cast to java.lang.Class<?> for a varargs call
+    [javac] cast to java.lang.Class<?>[] for a non-varargs call and to suppress
+ this warning
+    [javac]                 getStatisticsMethod = sessionFactory.getClass().get
+Method("getStatistics", null);
+    [javac]                                                                    
+                        ^
+    [javac] C:\Builds\NHProf\Hibernate.Appender\src\main\java\hibernatingrhinos
+\hibernate\profiler\appender\HibernateStatisticsProvider.java:47: warning: non-
+varargs call of varargs method with inexact argument type for last parameter;
+    [javac] cast to java.lang.Object for a varargs call
+    [javac] cast to java.lang.Object[] for a non-varargs call and to suppress t
+his warning
+    [javac]                 Object statistics = getStatisticsMethod.invoke(sess
+ionFactory, null);
+    [javac]                                                                    
+            ^
+    [javac] C:\Builds\NHProf\Hibernate.Appender\src\main\java\hibernatingrhinos
+\hibernate\profiler\appender\HibernateStatisticsProvider.java:51: warning: non-
+varargs call of varargs method with inexact argument type for last parameter;
+    [javac] cast to java.lang.Class<?> for a varargs call
+    [javac] cast to java.lang.Class<?>[] for a non-varargs call and to suppress
+ this warning
+    [javac]                 getSettings = sessionFactory.getClass().getMethod("
+getSettings", null);
+    [javac]                                                                    
+              ^
+    [javac] C:\Builds\NHProf\Hibernate.Appender\src\main\java\hibernatingrhinos
+\hibernate\profiler\appender\HibernateStatisticsProvider.java:52: warning: non-
+varargs call of varargs method with inexact argument type for last parameter;
+    [javac] cast to java.lang.Object for a varargs call
+    [javac] cast to java.lang.Object[] for a non-varargs call and to suppress t
+his warning
+    [javac]                 Object settings = getSettings.invoke(sessionFactory
+, null);
+    [javac]                                                                    
+  ^
+    [javac] C:\Builds\NHProf\Hibernate.Appender\src\main\java\hibernatingrhinos
+\hibernate\profiler\appender\HibernateStatisticsProvider.java:53: warning: non-
+varargs call of varargs method with inexact argument type for last parameter;
+    [javac] cast to java.lang.Class<?> for a varargs call
+    [javac] cast to java.lang.Class<?>[] for a non-varargs call and to suppress
+ this warning
+    [javac]                 getSessionFactoryName = settings.getClass().getMeth
+od("getSessionFactoryName", null);
+    [javac]                                                                    
+                            ^
+    [javac] C:\Builds\NHProf\Hibernate.Appender\src\main\java\hibernatingrhinos
+\hibernate\profiler\appender\HibernateStatisticsProvider.java:90: warning: non-
+varargs call of varargs method with inexact argument type for last parameter;
+    [javac] cast to java.lang.Object for a varargs call
+    [javac] cast to java.lang.Object[] for a non-varargs call and to suppress t
+his warning
+    [javac]                 Object stats = getStatisticsMethod.invoke(sessionFa
+ctory, null);
+    [javac]                                                                    
+       ^
+    [javac] C:\Builds\NHProf\Hibernate.Appender\src\main\java\hibernatingrhinos
+\hibernate\profiler\appender\HibernateStatisticsProvider.java:91: warning: non-
+varargs call of varargs method with inexact argument type for last parameter;
+    [javac] cast to java.lang.Object for a varargs call
+    [javac] cast to java.lang.Object[] for a non-varargs call and to suppress t
+his warning
+    [javac]                 Object settings = getSettings.invoke(sessionFactory
+, null);
+    [javac]                                                                    
+  ^
+    [javac] C:\Builds\NHProf\Hibernate.Appender\src\main\java\hibernatingrhinos
+\hibernate\profiler\appender\HibernateStatisticsProvider.java:92: warning: non-
+varargs call of varargs method with inexact argument type for last parameter;
+    [javac] cast to java.lang.Object for a varargs call
+    [javac] cast to java.lang.Object[] for a non-varargs call and to suppress t
+his warning
+    [javac]                 String sfName = (String)getSessionFactoryName.invok
+e(settings, null);
+    [javac]                                                                    
+            ^
+    [javac] C:\Builds\NHProf\Hibernate.Appender\src\main\java\hibernatingrhinos
+\hibernate\profiler\appender\HibernateStatisticsProvider.java:117: warning: non
+-varargs call of varargs method with inexact argument type for last parameter;
+    [javac] cast to java.lang.Object for a varargs call
+    [javac] cast to java.lang.Object[] for a non-varargs call and to suppress t
+his warning
+    [javac]                 Object result = info.invoke(stats, null);
+    [javac]                                                    ^
+    [javac] C:\Builds\NHProf\Hibernate.Appender\src\main\java\hibernatingrhinos
+\hibernate\profiler\appender\UrlHelper.java:34: warning: non-varargs call of va
+rargs method with inexact argument type for last parameter;
+    [javac] cast to java.lang.Class for a varargs call
+    [javac] cast to java.lang.Class[] for a non-varargs call and to suppress th
+is warning
+    [javac]                     urlRetrievalMethod = profilerListenerClass.getM
+ethod("getCurrentRequestUrl", null);
+    [javac]                                                                    
+                              ^
+    [javac] C:\Builds\NHProf\Hibernate.Appender\src\main\java\hibernatingrhinos
+\hibernate\profiler\appender\UrlHelper.java:47: warning: non-varargs call of va
+rargs method with inexact argument type for last parameter;
+    [javac] cast to java.lang.Object for a varargs call
+    [javac] cast to java.lang.Object[] for a non-varargs call and to suppress t
+his warning
+    [javac]             url = (String)urlRetrievalMethod.invoke(null, null);
+    [javac]                                                           ^
+    [javac] C:\Builds\NHProf\Hibernate.Appender\src\main\java\hibernatingrhinos
+\hibernate\profiler\spring\DisposableMethodInvokingFactoryBean.java:31: warning
+: non-varargs call of varargs method with inexact argument type for last parame
+ter;
+    [javac] cast to java.lang.Class for a varargs call
+    [javac] cast to java.lang.Class[] for a non-varargs call and to suppress th
+is warning
+    [javac]         Method destroy = target.getMethod(getDestroyMethod(), null)
+;
+    [javac]                                                               ^
+    [javac] C:\Builds\NHProf\Hibernate.Appender\src\main\java\hibernatingrhinos
+\hibernate\profiler\spring\DisposableMethodInvokingFactoryBean.java:32: warning
+: non-varargs call of varargs method with inexact argument type for last parame
+ter;
+    [javac] cast to java.lang.Object for a varargs call
+    [javac] cast to java.lang.Object[] for a non-varargs call and to suppress t
+his warning
+    [javac]         destroy.invoke(target, null);
+    [javac]                                ^
+    [javac] Note: Some input files use unchecked or unsafe operations.
+    [javac] Note: Recompile with -Xlint:unchecked for details.
+    [javac] 15 warnings
+     [copy] Copying 3 files to C:\Builds\NHProf\Hibernate.Appender\build-main
+
+build-tests:
+    [mkdir] Created dir: C:\Builds\NHProf\Hibernate.Appender\build-test
+    [javac] Compiling 9 source files to C:\Builds\NHProf\Hibernate.Appender\bui
+ld-test
+     [copy] Copying 6 files to C:\Builds\NHProf\Hibernate.Appender\build-test
+
+run-tests:
+    [mkdir] Created dir: C:\Builds\NHProf\Hibernate.Appender\reports\junit
+    [junit] Running hibernatingrhinos.hibernate.profiler.appender.HibernateProf
+ilerAppenderTests
+    [junit] Tests run: 2, Failures: 0, Errors: 0, Time elapsed: 1.122 sec
+    [junit] Running hibernatingrhinos.hibernate.profiler.appender.HibernateProf
+ilerTests
+    [junit] Tests run: 6, Failures: 0, Errors: 0, Time elapsed: 1.806 sec
+    [junit] Running hibernatingrhinos.hibernate.profiler.appender.HibernateStat
+isticsProviderTests
+    [junit] Tests run: 2, Failures: 0, Errors: 0, Time elapsed: 0.202 sec
+    [junit] Running hibernatingrhinos.hibernate.profiler.appender.StackTraceFra
+meTests
+    [junit] Tests run: 1, Failures: 0, Errors: 0, Time elapsed: 0.004 sec
+    [junit] Running hibernatingrhinos.hibernate.profiler.spring.HibernateProfil
+erNamespaceTests
+    [junit] Tests run: 6, Failures: 0, Errors: 0, Time elapsed: 0.384 sec
+
+report-tests:
+    [mkdir] Created dir: C:\Builds\NHProf\Hibernate.Appender\reports\junit-repo
+rt
+[junitreport] Processing C:\Builds\NHProf\Hibernate.Appender\reports\junit-repo
+rt\TESTS-TestSuites.xml to C:\Windows\TEMP\null1430839728
+[junitreport] Loading stylesheet jar:file:/C:/Builds/NHProf/SharedLibs/Tools/An
+t/lib/ant-junit.jar!/org/apache/tools/ant/taskdefs/optional/junit/xsl/junit-fra
+mes.xsl
+[junitreport] Transform time: 264ms
+[junitreport] Deleting: C:\Windows\TEMP\null1430839728
+
+dist:
+    [mkdir] Created dir: C:\Builds\NHProf\Hibernate.Appender\dist\lib
+      [jar] Building jar: C:\Builds\NHProf\Hibernate.Appender\dist\hibernate-pr
+ofiler-1.0.jar
+
+build-integration:
+    [mkdir] Created dir: C:\Builds\NHProf\Hibernate.Appender\build-integration
+    [javac] Compiling 54 source files to C:\Builds\NHProf\Hibernate.Appender\bu
+ild-integration
+     [copy] Copying 2 files to C:\Builds\NHProf\Hibernate.Appender\build-integr
+ation
+    [mkdir] Created dir: C:\Builds\NHProf\Hibernate.Appender\dist\integration
+      [jar] Building jar: C:\Builds\NHProf\Hibernate.Appender\dist\integration\
+hibernate-profiler-integration-server.jar
+     [copy] Copying 57 files to C:\Builds\NHProf\Hibernate.Appender\dist\integr
+ation
+    [mkdir] Created dir: C:\Builds\NHProf\Hibernate.Appender\temp-war-deps
+     [copy] Copying 57 files to C:\Builds\NHProf\Hibernate.Appender\temp-war-de
+ps
+      [war] Building war: C:\Builds\NHProf\Hibernate.Appender\dist\integration\
+hibernate-profiler-integration-webapp.war
+   [delete] Deleting directory C:\Builds\NHProf\Hibernate.Appender\temp-war-dep
+s
+
+all:
+
+BUILD SUCCESSFUL
+Total time: 9 seconds
+build .NET project
+Microsoft (R) Build Engine Version 3.5.30729.4926
+[Microsoft .NET Framework, Version 2.0.50727.4927]
+Copyright (C) Microsoft Corporation 2007. All rights reserved.
+
+Build started 10/3/2009 7:04:58 PM.
+Project "C:\Builds\NHProf\HibernatingRhinos.NHibernate.Profiler.sln" on node 0 (default targets).
+  Building solution configuration "Debug|Any CPU".
+Project "C:\Builds\NHProf\HibernatingRhinos.NHibernate.Profiler.sln" (1) is building "C:\Builds\NHProf\HibernatingRhinos.NHibernate.Profiler.Appender\HibernatingRhinos.NHibernate.Profiler.Appender.csproj" (2) on node 0 (default targets).
+  Copying file from "..\SharedLibs\log4net.dll" to "C:\Builds\NHProf\build\log4net.dll".
+  Copying file from "..\SharedLibs\Mono.Cecil.dll" to "C:\Builds\NHProf\build\Mono.Cecil.dll".
+  Copying file from "..\SharedLibs\Mono.Cecil.Pdb.dll" to "C:\Builds\NHProf\build\Mono.Cecil.Pdb.dll".
+  Copying file from "..\SharedLibs\log4net.xml" to "C:\Builds\NHProf\build\log4net.xml".
+_CopyAppConfigFile:
+  Copying file from "app.config" to "C:\Builds\NHProf\build\HibernatingRhinos.NHibernate.Profiler.Appender.dll.config".
+CopyFilesToOutputDirectory:
+  Copying file from "obj\Debug\HibernatingRhinos.NHibernate.Profiler.Appender.dll" to "C:\Builds\NHProf\build\HibernatingRhinos.NHibernate.Profiler.Appender.dll".
+  HibernatingRhinos.NHibernate.Profiler.Appender -> C:\Builds\NHProf\build\HibernatingRhinos.NHibernate.Profiler.Appender.dll
+  Copying file from "obj\Debug\HibernatingRhinos.NHibernate.Profiler.Appender.pdb" to "C:\Builds\NHProf\build\HibernatingRhinos.NHibernate.Profiler.Appender.pdb".
+Done Building Project "C:\Builds\NHProf\HibernatingRhinos.NHibernate.Profiler.Appender\HibernatingRhinos.NHibernate.Profiler.Appender.csproj" (default targets).
+Project "C:\Builds\NHProf\HibernatingRhinos.NHibernate.Profiler.sln" (1) is building "C:\Builds\NHProf\HibernatingRhinos.NHibernate.Profiler.BackEnd\HibernatingRhinos.NHibernate.Profiler.BackEnd.csproj" (3) on node 0 (default targets).
+  Processing 0 EDMX files.
+  Finished processing 0 EDMX files.
+_CopyFilesMarkedCopyLocal:
+  Copying file from "..\SharedLibs\Esent.Interop.dll" to "C:\Builds\NHProf\build\Esent.Interop.dll".
+  Copying file from "..\SharedLibs\gudusoft.gsqlparser.dll" to "C:\Builds\NHProf\build\gudusoft.gsqlparser.dll".
+  Copying file from "..\SharedLibs\Esent.Interop.pdb" to "C:\Builds\NHProf\build\Esent.Interop.pdb".
+  Copying file from "..\SharedLibs\Esent.Interop.xml" to "C:\Builds\NHProf\build\Esent.Interop.xml".
+CopyFilesToOutputDirectory:
+  Copying file from "obj\Debug\HibernatingRhinos.NHibernate.Profiler.BackEnd.dll" to "C:\Builds\NHProf\build\HibernatingRhinos.NHibernate.Profiler.BackEnd.dll".
+  HibernatingRhinos.NHibernate.Profiler.BackEnd -> C:\Builds\NHProf\build\HibernatingRhinos.NHibernate.Profiler.BackEnd.dll
+  Copying file from "obj\Debug\HibernatingRhinos.NHibernate.Profiler.BackEnd.pdb" to "C:\Builds\NHProf\build\HibernatingRhinos.NHibernate.Profiler.BackEnd.pdb".
+Done Building Project "C:\Builds\NHProf\HibernatingRhinos.NHibernate.Profiler.BackEnd\HibernatingRhinos.NHibernate.Profiler.BackEnd.csproj" (default targets).
+Project "C:\Builds\NHProf\HibernatingRhinos.NHibernate.Profiler.sln" (1) is building "C:\Builds\NHProf\HibernatingRhinos.NHibernate.Profiler.Client\HibernatingRhinos.NHibernate.Profiler.Client.csproj" (4) on node 0 (default targets).
+  Processing 0 EDMX files.
+  Finished processing 0 EDMX files.
+MarkupCompilePass2:
+  MarkupCompilePass2 successfully generated BAML or source code files.
+CleanupTemporaryTargetAssembly:
+  Deleting file "obj\Debug\HibernatingRhinos.NHibernate.Profiler.Client.exe".
+CoreResGen:
+  Processing resource file "Properties\Resources.resx" into "obj\Debug\HibernatingRhinos.NHibernate.Profiler.Client.Properties.Resources.resources".
+_CopyFilesMarkedCopyLocal:
+  Copying file from "..\SharedLibs\AqiStar.TextBox.dll" to "C:\Builds\NHProf\build\AqiStar.TextBox.dll".
+  Copying file from "..\SharedLibs\Caliburn.Core.dll" to "C:\Builds\NHProf\build\Caliburn.Core.dll".
+  Copying file from "..\SharedLibs\Caliburn.PresentationFramework.dll" to "C:\Builds\NHProf\build\Caliburn.PresentationFramework.dll".
+  Copying file from "..\SharedLibs\Microsoft.Practices.ServiceLocation.dll" to "C:\Builds\NHProf\build\Microsoft.Practices.ServiceLocation.dll".
+  Copying file from "..\SharedLibs\Xceed.Wpf.Controls.dll" to "C:\Builds\NHProf\build\Xceed.Wpf.Controls.dll".
+  Copying file from "..\SharedLibs\Xceed.Wpf.DataGrid.dll" to "C:\Builds\NHProf\build\Xceed.Wpf.DataGrid.dll".
+  Copying file from "..\SharedLibs\Xceed.Wpf.DataGrid.ThemePack.1.dll" to "C:\Builds\NHProf\build\Xceed.Wpf.DataGrid.ThemePack.1.dll".
+  Copying file from "..\SharedLibs\Xceed.Wpf.DataGrid.ThemePack.2.dll" to "C:\Builds\NHProf\build\Xceed.Wpf.DataGrid.ThemePack.2.dll".
+  Copying file from "..\SharedLibs\Caliburn.Core.pdb" to "C:\Builds\NHProf\build\Caliburn.Core.pdb".
+  Copying file from "..\SharedLibs\Caliburn.Core.xml" to "C:\Builds\NHProf\build\Caliburn.Core.xml".
+  Copying file from "..\SharedLibs\Microsoft.Practices.ServiceLocation.xml" to "C:\Builds\NHProf\build\Microsoft.Practices.ServiceLocation.xml".
+  Copying file from "..\SharedLibs\Caliburn.PresentationFramework.pdb" to "C:\Builds\NHProf\build\Caliburn.PresentationFramework.pdb".
+  Copying file from "..\SharedLibs\Caliburn.PresentationFramework.xml" to "C:\Builds\NHProf\build\Caliburn.PresentationFramework.xml".
+_CopyOutOfDateSourceItemsToOutputDirectory:
+  Copying file from "C:\Builds\NHProf\License.txt" to "C:\Builds\NHProf\build\License.txt".
+_CopyAppConfigFile:
+  Copying file from "app.config" to "C:\Builds\NHProf\build\HibernatingRhinos.NHibernate.Profiler.Client.exe.config".
+CopyFilesToOutputDirectory:
+  Copying file from "obj\Debug\HibernatingRhinos.NHibernate.Profiler.Client.exe" to "C:\Builds\NHProf\build\HibernatingRhinos.NHibernate.Profiler.Client.exe".
+  HibernatingRhinos.NHibernate.Profiler.Client -> C:\Builds\NHProf\build\HibernatingRhinos.NHibernate.Profiler.Client.exe
+  Copying file from "obj\Debug\HibernatingRhinos.NHibernate.Profiler.Client.pdb" to "C:\Builds\NHProf\build\HibernatingRhinos.NHibernate.Profiler.Client.pdb".
+Done Building Project "C:\Builds\NHProf\HibernatingRhinos.NHibernate.Profiler.Client\HibernatingRhinos.NHibernate.Profiler.Client.csproj" (default targets).
+Project "C:\Builds\NHProf\HibernatingRhinos.NHibernate.Profiler.sln" (1) is building "C:\Builds\NHProf\HibernatingRhinos.NHibernate.Profiler.IntegrationTests\HibernatingRhinos.NHibernate.Profiler.IntegrationTests.csproj" (6) on node 0 (default targets).
+  Processing 0 EDMX files.
+  Finished processing 0 EDMX files.
+_CopyFilesMarkedCopyLocal:
+  Copying file from "..\SharedLibs\Antlr3.Runtime.dll" to "C:\Builds\NHProf\build\Antlr3.Runtime.dll".
+  Copying file from "..\SharedLibs\Iesi.Collections.dll" to "C:\Builds\NHProf\build\Iesi.Collections.dll".
+  Copying file from "..\SharedLibs\NHibernate.ByteCode.Castle.dll" to "C:\Builds\NHProf\build\NHibernate.ByteCode.Castle.dll".
+  Copying file from "..\SharedLibs\NHibernate.dll" to "C:\Builds\NHProf\build\NHibernate.dll".
+  Copying file from "..\SharedLibs\Rhino.Mocks.dll" to "C:\Builds\NHProf\build\Rhino.Mocks.dll".
+  Copying file from "..\SharedLibs\xunit.dll" to "C:\Builds\NHProf\build\xunit.dll".
+  Copying file from "..\SharedLibs\Castle.DynamicProxy2.dll" to "C:\Builds\NHProf\build\Castle.DynamicProxy2.dll".
+  Copying file from "..\SharedLibs\Castle.Core.dll" to "C:\Builds\NHProf\build\Castle.Core.dll".
+  Copying file from "..\SharedLibs\xunit.xml" to "C:\Builds\NHProf\build\xunit.xml".
+  Copying file from "..\SharedLibs\Castle.DynamicProxy2.xml" to "C:\Builds\NHProf\build\Castle.DynamicProxy2.xml".
+  Copying file from "..\SharedLibs\NHibernate.ByteCode.Castle.pdb" to "C:\Builds\NHProf\build\NHibernate.ByteCode.Castle.pdb".
+  Copying file from "..\SharedLibs\NHibernate.ByteCode.Castle.xml" to "C:\Builds\NHProf\build\NHibernate.ByteCode.Castle.xml".
+  Copying file from "..\SharedLibs\Castle.Core.xml" to "C:\Builds\NHProf\build\Castle.Core.xml".
+  Copying file from "..\SharedLibs\Rhino.Mocks.xml" to "C:\Builds\NHProf\build\Rhino.Mocks.xml".
+  Copying file from "..\SharedLibs\Iesi.Collections.pdb" to "C:\Builds\NHProf\build\Iesi.Collections.pdb".
+  Copying file from "..\SharedLibs\Iesi.Collections.xml" to "C:\Builds\NHProf\build\Iesi.Collections.xml".
+  Copying file from "..\SharedLibs\NHibernate.pdb" to "C:\Builds\NHProf\build\NHibernate.pdb".
+  Copying file from "..\SharedLibs\NHibernate.xml" to "C:\Builds\NHProf\build\NHibernate.xml".
+_CopyOutOfDateSourceItemsToOutputDirectory:
+Skipping target "_CopyOutOfDateSourceItemsToOutputDirectory" because all output files are up-to-date with respect to the input files.
+_CopyOutOfDateSourceItemsToOutputDirectoryAlways:
+  Copying file from "C:\Builds\NHProf\HibernatingRhinos.NHibernate.Profiler.IntegrationTests\blow_away_nhprof.log4net.config" to "C:\Builds\NHProf\build\blow_away_nhprof.log4net.config".
+  Copying file from "C:\Builds\NHProf\HibernatingRhinos.NHibernate.Profiler.IntegrationTests\offline.log4net.config" to "C:\Builds\NHProf\build\offline.log4net.config".
+  Copying file from "C:\Builds\NHProf\HibernatingRhinos.NHibernate.Profiler.IntegrationTests\simple.log4net.config" to "C:\Builds\NHProf\build\simple.log4net.config".
+  Copying file from "C:\Builds\NHProf\HibernatingRhinos.NHibernate.Profiler.IntegrationTests\nhprof.log4net.config" to "C:\Builds\NHProf\build\nhprof.log4net.config".
+  Copying file from "C:\Builds\NHProf\HibernatingRhinos.NHibernate.Profiler.IntegrationTests\default.log4net.config" to "C:\Builds\NHProf\build\default.log4net.config".
+CopyFilesToOutputDirectory:
+  Copying file from "obj\Debug\HibernatingRhinos.NHibernate.Profiler.IntegrationTests.exe" to "C:\Builds\NHProf\build\HibernatingRhinos.NHibernate.Profiler.IntegrationTests.exe".
+  HibernatingRhinos.NHibernate.Profiler.IntegrationTests -> C:\Builds\NHProf\build\HibernatingRhinos.NHibernate.Profiler.IntegrationTests.exe
+  Copying file from "obj\Debug\HibernatingRhinos.NHibernate.Profiler.IntegrationTests.pdb" to "C:\Builds\NHProf\build\HibernatingRhinos.NHibernate.Profiler.IntegrationTests.pdb".
+Done Building Project "C:\Builds\NHProf\HibernatingRhinos.NHibernate.Profiler.IntegrationTests\HibernatingRhinos.NHibernate.Profiler.IntegrationTests.csproj" (default targets).
+Project "C:\Builds\NHProf\HibernatingRhinos.NHibernate.Profiler.sln" (1) is building "C:\Builds\NHProf\HibernatingRhinos.NHibernate.Profiler.Tests\HibernatingRhinos.NHibernate.Profiler.Tests.csproj" (7) on node 0 (default targets).
+  Processing 0 EDMX files.
+  Finished processing 0 EDMX files.
+_CopyFilesMarkedCopyLocal:
+  Copying file from "..\SharedLibs\Caliburn.Testability.dll" to "C:\Builds\NHProf\build\Caliburn.Testability.dll".
+  Copying file from "..\SharedLibs\Caliburn.Testability.pdb" to "C:\Builds\NHProf\build\Caliburn.Testability.pdb".
+  Copying file from "..\SharedLibs\Caliburn.Testability.xml" to "C:\Builds\NHProf\build\Caliburn.Testability.xml".
+_CopyOutOfDateSourceItemsToOutputDirectory:
+Building target "_CopyOutOfDateSourceItemsToOutputDirectory" partially, because some output files are out of date with respect to their input files.
+Creating directory "C:\Builds\NHProf\build\Bugs\AvgDurationWhenThereIsOnlyOneStatement".
+Copying file from "C:\Builds\NHProf\HibernatingRhinos.NHibernate.Profiler.Tests\Bugs\AvgDurationWhenThereIsOnlyOneStatement\AvgDurationSingleStmtmt.nhprof" to "C:\Builds\NHProf\build\Bugs\AvgDurationWhenThereIsOnlyOneStatement\AvgDurationSingleStmtmt.nhprof".
+Creating directory "C:\Builds\NHProf\build\Bugs\Blob".
+Copying file from "C:\Builds\NHProf\HibernatingRhinos.NHibernate.Profiler.Tests\Bugs\Blob\blob.nhprof" to "C:\Builds\NHProf\build\Bugs\Blob\blob.nhprof".
+Creating directory "C:\Builds\NHProf\build\Bugs\NHibernate1_2_Compact".
+Copying file from "C:\Builds\NHProf\HibernatingRhinos.NHibernate.Profiler.Tests\Bugs\NHibernate1_2_Compact\paul.nhprof" to "C:\Builds\NHProf\build\Bugs\NHibernate1_2_Compact\paul.nhprof".
+CopyFilesToOutputDirectory:
+  Copying file from "obj\Debug\HibernatingRhinos.NHibernate.Profiler.Tests.dll" to "C:\Builds\NHProf\build\HibernatingRhinos.NHibernate.Profiler.Tests.dll".
+  HibernatingRhinos.NHibernate.Profiler.Tests -> C:\Builds\NHProf\build\HibernatingRhinos.NHibernate.Profiler.Tests.dll
+  Copying file from "obj\Debug\HibernatingRhinos.NHibernate.Profiler.Tests.pdb" to "C:\Builds\NHProf\build\HibernatingRhinos.NHibernate.Profiler.Tests.pdb".
+Done Building Project "C:\Builds\NHProf\HibernatingRhinos.NHibernate.Profiler.Tests\HibernatingRhinos.NHibernate.Profiler.Tests.csproj" (default targets).
+Project "C:\Builds\NHProf\HibernatingRhinos.NHibernate.Profiler.sln" (1) is building "C:\Builds\NHProf\HibernatingRhinos.NHibernate.Profiler.ViewTests\HibernatingRhinos.NHibernate.Profiler.ViewTests.csproj" (8) on node 0 (default targets).
+  Processing 0 EDMX files.
+  Finished processing 0 EDMX files.
+_CopyOutOfDateSourceItemsToOutputDirectory:
+Building target "_CopyOutOfDateSourceItemsToOutputDirectory" partially, because some output files are out of date with respect to their input files.
+Copying file from "C:\Builds\NHProf\HibernatingRhinos.NHibernate.Profiler.ViewTests\HibernatingRhinos.NHibernate.Profiler.ViewTests.dll.config" to "C:\Builds\NHProf\build\HibernatingRhinos.NHibernate.Profiler.ViewTests.dll.config".
+CopyFilesToOutputDirectory:
+  Copying file from "obj\Debug\HibernatingRhinos.NHibernate.Profiler.ViewTests.dll" to "C:\Builds\NHProf\build\HibernatingRhinos.NHibernate.Profiler.ViewTests.dll".
+  HibernatingRhinos.NHibernate.Profiler.ViewTests -> C:\Builds\NHProf\build\HibernatingRhinos.NHibernate.Profiler.ViewTests.dll
+  Copying file from "obj\Debug\HibernatingRhinos.NHibernate.Profiler.ViewTests.pdb" to "C:\Builds\NHProf\build\HibernatingRhinos.NHibernate.Profiler.ViewTests.pdb".
+Done Building Project "C:\Builds\NHProf\HibernatingRhinos.NHibernate.Profiler.ViewTests\HibernatingRhinos.NHibernate.Profiler.ViewTests.csproj" (default targets).
+Project "C:\Builds\NHProf\HibernatingRhinos.NHibernate.Profiler.sln" (1) is building "C:\Builds\NHProf\HibernatingRhinos.NHibernate.Profiler.Java.IntegrationTests\HibernatingRhinos.NHibernate.Profiler.Java.IntegrationTests.csproj" (9) on node 0 (default targets).
+  Processing 0 EDMX files.
+  Finished processing 0 EDMX files.
+_CopyOutOfDateSourceItemsToOutputDirectory:
+Building target "_CopyOutOfDateSourceItemsToOutputDirectory" partially, because some output files are out of date with respect to their input files.
+Creating directory "C:\Builds\NHProf\build\TestDumps".
+Copying file from "C:\Builds\NHProf\HibernatingRhinos.NHibernate.Profiler.Java.IntegrationTests\TestDumps\hilo.nhprof" to "C:\Builds\NHProf\build\TestDumps\hilo.nhprof".
+_CopyOutOfDateSourceItemsToOutputDirectoryAlways:
+  Copying file from "C:\Builds\NHProf\HibernatingRhinos.NHibernate.Profiler.IntegrationTests\blow_away_nhprof.log4net.config" to "C:\Builds\NHProf\build\blow_away_nhprof.log4net.config".
+  Copying file from "C:\Builds\NHProf\HibernatingRhinos.NHibernate.Profiler.IntegrationTests\offline.log4net.config" to "C:\Builds\NHProf\build\offline.log4net.config".
+  Copying file from "C:\Builds\NHProf\HibernatingRhinos.NHibernate.Profiler.IntegrationTests\simple.log4net.config" to "C:\Builds\NHProf\build\simple.log4net.config".
+  Copying file from "C:\Builds\NHProf\HibernatingRhinos.NHibernate.Profiler.IntegrationTests\nhprof.log4net.config" to "C:\Builds\NHProf\build\nhprof.log4net.config".
+  Copying file from "C:\Builds\NHProf\HibernatingRhinos.NHibernate.Profiler.IntegrationTests\default.log4net.config" to "C:\Builds\NHProf\build\default.log4net.config".
+CopyFilesToOutputDirectory:
+  Copying file from "obj\Debug\HibernatingRhinos.NHibernate.Profiler.Java.IntegrationTests.dll" to "C:\Builds\NHProf\build\HibernatingRhinos.NHibernate.Profiler.Java.IntegrationTests.dll".
+  HibernatingRhinos.NHibernate.Profiler.Java.IntegrationTests -> C:\Builds\NHProf\build\HibernatingRhinos.NHibernate.Profiler.Java.IntegrationTests.dll
+  Copying file from "obj\Debug\HibernatingRhinos.NHibernate.Profiler.Java.IntegrationTests.pdb" to "C:\Builds\NHProf\build\HibernatingRhinos.NHibernate.Profiler.Java.IntegrationTests.pdb".
+Done Building Project "C:\Builds\NHProf\HibernatingRhinos.NHibernate.Profiler.Java.IntegrationTests\HibernatingRhinos.NHibernate.Profiler.Java.IntegrationTests.csproj" (default targets).
+Done Building Project "C:\Builds\NHProf\HibernatingRhinos.NHibernate.Profiler.sln" (default targets).
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:07.73
+Executing task, Test...
+xUnit.net console test runner (64-bit .NET 2.0.50727.4927)
+Copyright (C) 2007-9 Microsoft Corporation.
+
+xunit.dll:     Version 1.5.0.1479
+Test assembly: C:\Builds\NHProf\build\HibernatingRhinos.NHibernate.Profiler.Tests.dll
+
+.........................................................................................
+Total tests: 89, Failures: 0, Skipped: 0, Time: 86.106 seconds
+xUnit.net console test runner (64-bit .NET 2.0.50727.4927)
+Copyright (C) 2007-9 Microsoft Corporation.
+
+xunit.dll:     Version 1.5.0.1479
+Test assembly: C:\Builds\NHProf\build\HibernatingRhinos.NHibernate.Profiler.ViewTests.dll
+
+..............................S..........
+Total tests: 41, Failures: 0, Skipped: 1, Time: 8.099 seconds
+
+Tests skipped:
+
+1) HibernatingRhinos.NHibernate.Profiler.ViewTests.SessionPresenterViewTestFixutre.BindingsDoNotHaveErrors : I have a temporary property that the validator doesn't see.
+xUnit.net console test runner (64-bit .NET 2.0.50727.4927)
+Copyright (C) 2007-9 Microsoft Corporation.
+
+xunit.dll:     Version 1.5.0.1479
+Test assembly: C:\Builds\NHProf\build\HibernatingRhinos.NHibernate.Profiler.IntegrationTests.exe
+
+..4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+.4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+......4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+........4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+..
+    if exists (select 1 from sys.objects where object_id = OBJECT_ID(N'[FK5A98FACFEBC226AF]') AND parent_object_id = OBJECT_ID('UsersBlogs'))
+alter table UsersBlogs  drop constraint FK5A98FACFEBC226AF
+
+
+    if exists (select 1 from sys.objects where object_id = OBJECT_ID(N'[FK5A98FACFBCB370B9]') AND parent_object_id = OBJECT_ID('UsersBlogs'))
+alter table UsersBlogs  drop constraint FK5A98FACFBCB370B9
+
+
+    if exists (select 1 from sys.objects where object_id = OBJECT_ID(N'[FKF1BF7CDDE7CD44A1]') AND parent_object_id = OBJECT_ID('CategoriesPosts'))
+alter table CategoriesPosts  drop constraint FKF1BF7CDDE7CD44A1
+
+
+    if exists (select 1 from sys.objects where object_id = OBJECT_ID(N'[FKF1BF7CDD2FBD6C29]') AND parent_object_id = OBJECT_ID('CategoriesPosts'))
+alter table CategoriesPosts  drop constraint FKF1BF7CDD2FBD6C29
+
+
+    if exists (select 1 from sys.objects where object_id = OBJECT_ID(N'[FK740EB05CE7CD44A1]') AND parent_object_id = OBJECT_ID('Comments'))
+alter table Comments  drop constraint FK740EB05CE7CD44A1
+
+
+    if exists (select 1 from sys.objects where object_id = OBJECT_ID(N'[FKD7AA788BBCB370B9]') AND parent_object_id = OBJECT_ID('Posts'))
+alter table Posts  drop constraint FKD7AA788BBCB370B9
+
+
+    if exists (select 1 from sys.objects where object_id = OBJECT_ID(N'[FKD7AA788BEBC226AF]') AND parent_object_id = OBJECT_ID('Posts'))
+alter table Posts  drop constraint FKD7AA788BEBC226AF
+
+
+    if exists (select 1 from sys.objects where object_id = OBJECT_ID(N'[FK9061CD29AAACF2]') AND parent_object_id = OBJECT_ID('Tags'))
+alter table Tags  drop constraint FK9061CD29AAACF2
+
+
+    if exists (select * from dbo.sysobjects where id = object_id(N'Blogs') and OBJECTPROPERTY(id, N'IsUserTable') = 1) drop table Blogs
+
+    if exists (select * from dbo.sysobjects where id = object_id(N'UsersBlogs') and OBJECTPROPERTY(id, N'IsUserTable') = 1) drop table UsersBlogs
+
+    if exists (select * from dbo.sysobjects where id = object_id(N'Categories') and OBJECTPROPERTY(id, N'IsUserTable') = 1) drop table Categories
+
+    if exists (select * from dbo.sysobjects where id = object_id(N'CategoriesPosts') and OBJECTPROPERTY(id, N'IsUserTable') = 1) drop table CategoriesPosts
+
+    if exists (select * from dbo.sysobjects where id = object_id(N'Comments') and OBJECTPROPERTY(id, N'IsUserTable') = 1) drop table Comments
+
+    if exists (select * from dbo.sysobjects where id = object_id(N'Posts') and OBJECTPROPERTY(id, N'IsUserTable') = 1) drop table Posts
+
+    if exists (select * from dbo.sysobjects where id = object_id(N'Tags') and OBJECTPROPERTY(id, N'IsUserTable') = 1) drop table Tags
+
+    if exists (select * from dbo.sysobjects where id = object_id(N'Users') and OBJECTPROPERTY(id, N'IsUserTable') = 1) drop table Users
+
+    create table Blogs (
+        Id INT IDENTITY NOT NULL,
+       Title NVARCHAR(255) null,
+       Subtitle NVARCHAR(255) null,
+       AllowsComments BIT null,
+       CreatedAt DATETIME null,
+       primary key (Id)
+    )
+
+    create table UsersBlogs (
+        BlogId INT not null,
+       UserId INT not null,
+       primary key (UserId, BlogId)
+    )
+
+    create table Categories (
+        Id INT not null,
+       Name NVARCHAR(255) null,
+       primary key (Id)
+    )
+
+    create table CategoriesPosts (
+        CategoryId INT not null,
+       PostId INT not null,
+       primary key (PostId, CategoryId)
+    )
+
+    create table Comments (
+        Id INT IDENTITY NOT NULL,
+       Name NVARCHAR(255) null,
+       Email NVARCHAR(255) null,
+       HomePage NVARCHAR(255) null,
+       Ip INT null,
+       Text NVARCHAR(255) null,
+       PostId INT null,
+       primary key (Id)
+    )
+
+    create table Posts (
+        Id INT IDENTITY NOT NULL,
+       Title NVARCHAR(255) null,
+       Text NVARCHAR(255) null,
+       PostedAt DATETIME null,
+       BlogId INT null,
+       UserId INT null,
+       primary key (Id)
+    )
+
+    create table Tags (
+        Id INT IDENTITY NOT NULL,
+       Name NVARCHAR(255) null,
+       ItemId INT null,
+       ItemType INT null,
+       primary key (Id)
+    )
+
+    create table Users (
+        Id INT IDENTITY NOT NULL,
+       Password VARBINARY(8000) null,
+       Username NVARCHAR(255) null,
+       Email NVARCHAR(255) null,
+       CreatedAt DATETIME null,
+       Bio NVARCHAR(255) null,
+       primary key (Id)
+    )
+
+    alter table UsersBlogs 
+        add constraint FK5A98FACFEBC226AF 
+        foreign key (UserId) 
+        references Users
+
+    alter table UsersBlogs 
+        add constraint FK5A98FACFBCB370B9 
+        foreign key (BlogId) 
+        references Blogs
+
+    alter table CategoriesPosts 
+        add constraint FKF1BF7CDDE7CD44A1 
+        foreign key (PostId) 
+        references Posts
+
+    alter table CategoriesPosts 
+        add constraint FKF1BF7CDD2FBD6C29 
+        foreign key (CategoryId) 
+        references Categories
+
+    alter table Comments 
+        add constraint FK740EB05CE7CD44A1 
+        foreign key (PostId) 
+        references Posts
+
+    alter table Posts 
+        add constraint FKD7AA788BBCB370B9 
+        foreign key (BlogId) 
+        references Blogs
+
+    alter table Posts 
+        add constraint FKD7AA788BEBC226AF 
+        foreign key (UserId) 
+        references Users
+
+    alter table Tags 
+        add constraint FK9061CD29AAACF2 
+        foreign key (ItemId) 
+        references Blogs
+.
+    if exists (select 1 from sys.objects where object_id = OBJECT_ID(N'[FK5A98FACFEBC226AF]') AND parent_object_id = OBJECT_ID('UsersBlogs'))
+alter table UsersBlogs  drop constraint FK5A98FACFEBC226AF
+
+
+    if exists (select 1 from sys.objects where object_id = OBJECT_ID(N'[FK5A98FACFBCB370B9]') AND parent_object_id = OBJECT_ID('UsersBlogs'))
+alter table UsersBlogs  drop constraint FK5A98FACFBCB370B9
+
+
+    if exists (select 1 from sys.objects where object_id = OBJECT_ID(N'[FKF1BF7CDDE7CD44A1]') AND parent_object_id = OBJECT_ID('CategoriesPosts'))
+alter table CategoriesPosts  drop constraint FKF1BF7CDDE7CD44A1
+
+
+    if exists (select 1 from sys.objects where object_id = OBJECT_ID(N'[FKF1BF7CDD2FBD6C29]') AND parent_object_id = OBJECT_ID('CategoriesPosts'))
+alter table CategoriesPosts  drop constraint FKF1BF7CDD2FBD6C29
+
+
+    if exists (select 1 from sys.objects where object_id = OBJECT_ID(N'[FK740EB05CE7CD44A1]') AND parent_object_id = OBJECT_ID('Comments'))
+alter table Comments  drop constraint FK740EB05CE7CD44A1
+
+
+    if exists (select 1 from sys.objects where object_id = OBJECT_ID(N'[FKD7AA788BBCB370B9]') AND parent_object_id = OBJECT_ID('Posts'))
+alter table Posts  drop constraint FKD7AA788BBCB370B9
+
+
+    if exists (select 1 from sys.objects where object_id = OBJECT_ID(N'[FKD7AA788BEBC226AF]') AND parent_object_id = OBJECT_ID('Posts'))
+alter table Posts  drop constraint FKD7AA788BEBC226AF
+
+
+    if exists (select 1 from sys.objects where object_id = OBJECT_ID(N'[FK9061CD29AAACF2]') AND parent_object_id = OBJECT_ID('Tags'))
+alter table Tags  drop constraint FK9061CD29AAACF2
+
+
+    if exists (select * from dbo.sysobjects where id = object_id(N'Blogs') and OBJECTPROPERTY(id, N'IsUserTable') = 1) drop table Blogs
+
+    if exists (select * from dbo.sysobjects where id = object_id(N'UsersBlogs') and OBJECTPROPERTY(id, N'IsUserTable') = 1) drop table UsersBlogs
+
+    if exists (select * from dbo.sysobjects where id = object_id(N'Categories') and OBJECTPROPERTY(id, N'IsUserTable') = 1) drop table Categories
+
+    if exists (select * from dbo.sysobjects where id = object_id(N'CategoriesPosts') and OBJECTPROPERTY(id, N'IsUserTable') = 1) drop table CategoriesPosts
+
+    if exists (select * from dbo.sysobjects where id = object_id(N'Comments') and OBJECTPROPERTY(id, N'IsUserTable') = 1) drop table Comments
+
+    if exists (select * from dbo.sysobjects where id = object_id(N'Posts') and OBJECTPROPERTY(id, N'IsUserTable') = 1) drop table Posts
+
+    if exists (select * from dbo.sysobjects where id = object_id(N'Tags') and OBJECTPROPERTY(id, N'IsUserTable') = 1) drop table Tags
+
+    if exists (select * from dbo.sysobjects where id = object_id(N'Users') and OBJECTPROPERTY(id, N'IsUserTable') = 1) drop table Users
+
+    create table Blogs (
+        Id INT IDENTITY NOT NULL,
+       Title NVARCHAR(255) null,
+       Subtitle NVARCHAR(255) null,
+       AllowsComments BIT null,
+       CreatedAt DATETIME null,
+       primary key (Id)
+    )
+
+    create table UsersBlogs (
+        BlogId INT not null,
+       UserId INT not null,
+       primary key (UserId, BlogId)
+    )
+
+    create table Categories (
+        Id INT not null,
+       Name NVARCHAR(255) null,
+       primary key (Id)
+    )
+
+    create table CategoriesPosts (
+        CategoryId INT not null,
+       PostId INT not null,
+       primary key (PostId, CategoryId)
+    )
+
+    create table Comments (
+        Id INT IDENTITY NOT NULL,
+       Name NVARCHAR(255) null,
+       Email NVARCHAR(255) null,
+       HomePage NVARCHAR(255) null,
+       Ip INT null,
+       Text NVARCHAR(255) null,
+       PostId INT null,
+       primary key (Id)
+    )
+
+    create table Posts (
+        Id INT IDENTITY NOT NULL,
+       Title NVARCHAR(255) null,
+       Text NVARCHAR(255) null,
+       PostedAt DATETIME null,
+       BlogId INT null,
+       UserId INT null,
+       primary key (Id)
+    )
+
+    create table Tags (
+        Id INT IDENTITY NOT NULL,
+       Name NVARCHAR(255) null,
+       ItemId INT null,
+       ItemType INT null,
+       primary key (Id)
+    )
+
+    create table Users (
+        Id INT IDENTITY NOT NULL,
+       Password VARBINARY(8000) null,
+       Username NVARCHAR(255) null,
+       Email NVARCHAR(255) null,
+       CreatedAt DATETIME null,
+       Bio NVARCHAR(255) null,
+       primary key (Id)
+    )
+
+    alter table UsersBlogs 
+        add constraint FK5A98FACFEBC226AF 
+        foreign key (UserId) 
+        references Users
+
+    alter table UsersBlogs 
+        add constraint FK5A98FACFBCB370B9 
+        foreign key (BlogId) 
+        references Blogs
+
+    alter table CategoriesPosts 
+        add constraint FKF1BF7CDDE7CD44A1 
+        foreign key (PostId) 
+        references Posts
+
+    alter table CategoriesPosts 
+        add constraint FKF1BF7CDD2FBD6C29 
+        foreign key (CategoryId) 
+        references Categories
+
+    alter table Comments 
+        add constraint FK740EB05CE7CD44A1 
+        foreign key (PostId) 
+        references Posts
+
+    alter table Posts 
+        add constraint FKD7AA788BBCB370B9 
+        foreign key (BlogId) 
+        references Blogs
+
+    alter table Posts 
+        add constraint FKD7AA788BEBC226AF 
+        foreign key (UserId) 
+        references Users
+
+    alter table Tags 
+        add constraint FK9061CD29AAACF2 
+        foreign key (ItemId) 
+        references Blogs
+.
+    if exists (select 1 from sys.objects where object_id = OBJECT_ID(N'[FK5A98FACFEBC226AF]') AND parent_object_id = OBJECT_ID('UsersBlogs'))
+alter table UsersBlogs  drop constraint FK5A98FACFEBC226AF
+
+
+    if exists (select 1 from sys.objects where object_id = OBJECT_ID(N'[FK5A98FACFBCB370B9]') AND parent_object_id = OBJECT_ID('UsersBlogs'))
+alter table UsersBlogs  drop constraint FK5A98FACFBCB370B9
+
+
+    if exists (select 1 from sys.objects where object_id = OBJECT_ID(N'[FKF1BF7CDDE7CD44A1]') AND parent_object_id = OBJECT_ID('CategoriesPosts'))
+alter table CategoriesPosts  drop constraint FKF1BF7CDDE7CD44A1
+
+
+    if exists (select 1 from sys.objects where object_id = OBJECT_ID(N'[FKF1BF7CDD2FBD6C29]') AND parent_object_id = OBJECT_ID('CategoriesPosts'))
+alter table CategoriesPosts  drop constraint FKF1BF7CDD2FBD6C29
+
+
+    if exists (select 1 from sys.objects where object_id = OBJECT_ID(N'[FK740EB05CE7CD44A1]') AND parent_object_id = OBJECT_ID('Comments'))
+alter table Comments  drop constraint FK740EB05CE7CD44A1
+
+
+    if exists (select 1 from sys.objects where object_id = OBJECT_ID(N'[FKD7AA788BBCB370B9]') AND parent_object_id = OBJECT_ID('Posts'))
+alter table Posts  drop constraint FKD7AA788BBCB370B9
+
+
+    if exists (select 1 from sys.objects where object_id = OBJECT_ID(N'[FKD7AA788BEBC226AF]') AND parent_object_id = OBJECT_ID('Posts'))
+alter table Posts  drop constraint FKD7AA788BEBC226AF
+
+
+    if exists (select 1 from sys.objects where object_id = OBJECT_ID(N'[FK9061CD29AAACF2]') AND parent_object_id = OBJECT_ID('Tags'))
+alter table Tags  drop constraint FK9061CD29AAACF2
+
+
+    if exists (select * from dbo.sysobjects where id = object_id(N'Blogs') and OBJECTPROPERTY(id, N'IsUserTable') = 1) drop table Blogs
+
+    if exists (select * from dbo.sysobjects where id = object_id(N'UsersBlogs') and OBJECTPROPERTY(id, N'IsUserTable') = 1) drop table UsersBlogs
+
+    if exists (select * from dbo.sysobjects where id = object_id(N'Categories') and OBJECTPROPERTY(id, N'IsUserTable') = 1) drop table Categories
+
+    if exists (select * from dbo.sysobjects where id = object_id(N'CategoriesPosts') and OBJECTPROPERTY(id, N'IsUserTable') = 1) drop table CategoriesPosts
+
+    if exists (select * from dbo.sysobjects where id = object_id(N'Comments') and OBJECTPROPERTY(id, N'IsUserTable') = 1) drop table Comments
+
+    if exists (select * from dbo.sysobjects where id = object_id(N'Posts') and OBJECTPROPERTY(id, N'IsUserTable') = 1) drop table Posts
+
+    if exists (select * from dbo.sysobjects where id = object_id(N'Tags') and OBJECTPROPERTY(id, N'IsUserTable') = 1) drop table Tags
+
+    if exists (select * from dbo.sysobjects where id = object_id(N'Users') and OBJECTPROPERTY(id, N'IsUserTable') = 1) drop table Users
+
+    create table Blogs (
+        Id INT IDENTITY NOT NULL,
+       Title NVARCHAR(255) null,
+       Subtitle NVARCHAR(255) null,
+       AllowsComments BIT null,
+       CreatedAt DATETIME null,
+       primary key (Id)
+    )
+
+    create table UsersBlogs (
+        BlogId INT not null,
+       UserId INT not null,
+       primary key (UserId, BlogId)
+    )
+
+    create table Categories (
+        Id INT not null,
+       Name NVARCHAR(255) null,
+       primary key (Id)
+    )
+
+    create table CategoriesPosts (
+        CategoryId INT not null,
+       PostId INT not null,
+       primary key (PostId, CategoryId)
+    )
+
+    create table Comments (
+        Id INT IDENTITY NOT NULL,
+       Name NVARCHAR(255) null,
+       Email NVARCHAR(255) null,
+       HomePage NVARCHAR(255) null,
+       Ip INT null,
+       Text NVARCHAR(255) null,
+       PostId INT null,
+       primary key (Id)
+    )
+
+    create table Posts (
+        Id INT IDENTITY NOT NULL,
+       Title NVARCHAR(255) null,
+       Text NVARCHAR(255) null,
+       PostedAt DATETIME null,
+       BlogId INT null,
+       UserId INT null,
+       primary key (Id)
+    )
+
+    create table Tags (
+        Id INT IDENTITY NOT NULL,
+       Name NVARCHAR(255) null,
+       ItemId INT null,
+       ItemType INT null,
+       primary key (Id)
+    )
+
+    create table Users (
+        Id INT IDENTITY NOT NULL,
+       Password VARBINARY(8000) null,
+       Username NVARCHAR(255) null,
+       Email NVARCHAR(255) null,
+       CreatedAt DATETIME null,
+       Bio NVARCHAR(255) null,
+       primary key (Id)
+    )
+
+    alter table UsersBlogs 
+        add constraint FK5A98FACFEBC226AF 
+        foreign key (UserId) 
+        references Users
+
+    alter table UsersBlogs 
+        add constraint FK5A98FACFBCB370B9 
+        foreign key (BlogId) 
+        references Blogs
+
+    alter table CategoriesPosts 
+        add constraint FKF1BF7CDDE7CD44A1 
+        foreign key (PostId) 
+        references Posts
+
+    alter table CategoriesPosts 
+        add constraint FKF1BF7CDD2FBD6C29 
+        foreign key (CategoryId) 
+        references Categories
+
+    alter table Comments 
+        add constraint FK740EB05CE7CD44A1 
+        foreign key (PostId) 
+        references Posts
+
+    alter table Posts 
+        add constraint FKD7AA788BBCB370B9 
+        foreign key (BlogId) 
+        references Blogs
+
+    alter table Posts 
+        add constraint FKD7AA788BEBC226AF 
+        foreign key (UserId) 
+        references Users
+
+    alter table Tags 
+        add constraint FK9061CD29AAACF2 
+        foreign key (ItemId) 
+        references Blogs
+.
+    if exists (select 1 from sys.objects where object_id = OBJECT_ID(N'[FK5A98FACFEBC226AF]') AND parent_object_id = OBJECT_ID('UsersBlogs'))
+alter table UsersBlogs  drop constraint FK5A98FACFEBC226AF
+
+
+    if exists (select 1 from sys.objects where object_id = OBJECT_ID(N'[FK5A98FACFBCB370B9]') AND parent_object_id = OBJECT_ID('UsersBlogs'))
+alter table UsersBlogs  drop constraint FK5A98FACFBCB370B9
+
+
+    if exists (select 1 from sys.objects where object_id = OBJECT_ID(N'[FKF1BF7CDDE7CD44A1]') AND parent_object_id = OBJECT_ID('CategoriesPosts'))
+alter table CategoriesPosts  drop constraint FKF1BF7CDDE7CD44A1
+
+
+    if exists (select 1 from sys.objects where object_id = OBJECT_ID(N'[FKF1BF7CDD2FBD6C29]') AND parent_object_id = OBJECT_ID('CategoriesPosts'))
+alter table CategoriesPosts  drop constraint FKF1BF7CDD2FBD6C29
+
+
+    if exists (select 1 from sys.objects where object_id = OBJECT_ID(N'[FK740EB05CE7CD44A1]') AND parent_object_id = OBJECT_ID('Comments'))
+alter table Comments  drop constraint FK740EB05CE7CD44A1
+
+
+    if exists (select 1 from sys.objects where object_id = OBJECT_ID(N'[FKD7AA788BBCB370B9]') AND parent_object_id = OBJECT_ID('Posts'))
+alter table Posts  drop constraint FKD7AA788BBCB370B9
+
+
+    if exists (select 1 from sys.objects where object_id = OBJECT_ID(N'[FKD7AA788BEBC226AF]') AND parent_object_id = OBJECT_ID('Posts'))
+alter table Posts  drop constraint FKD7AA788BEBC226AF
+
+
+    if exists (select 1 from sys.objects where object_id = OBJECT_ID(N'[FK9061CD29AAACF2]') AND parent_object_id = OBJECT_ID('Tags'))
+alter table Tags  drop constraint FK9061CD29AAACF2
+
+
+    if exists (select * from dbo.sysobjects where id = object_id(N'Blogs') and OBJECTPROPERTY(id, N'IsUserTable') = 1) drop table Blogs
+
+    if exists (select * from dbo.sysobjects where id = object_id(N'UsersBlogs') and OBJECTPROPERTY(id, N'IsUserTable') = 1) drop table UsersBlogs
+
+    if exists (select * from dbo.sysobjects where id = object_id(N'Categories') and OBJECTPROPERTY(id, N'IsUserTable') = 1) drop table Categories
+
+    if exists (select * from dbo.sysobjects where id = object_id(N'CategoriesPosts') and OBJECTPROPERTY(id, N'IsUserTable') = 1) drop table CategoriesPosts
+
+    if exists (select * from dbo.sysobjects where id = object_id(N'Comments') and OBJECTPROPERTY(id, N'IsUserTable') = 1) drop table Comments
+
+    if exists (select * from dbo.sysobjects where id = object_id(N'Posts') and OBJECTPROPERTY(id, N'IsUserTable') = 1) drop table Posts
+
+    if exists (select * from dbo.sysobjects where id = object_id(N'Tags') and OBJECTPROPERTY(id, N'IsUserTable') = 1) drop table Tags
+
+    if exists (select * from dbo.sysobjects where id = object_id(N'Users') and OBJECTPROPERTY(id, N'IsUserTable') = 1) drop table Users
+
+    create table Blogs (
+        Id INT IDENTITY NOT NULL,
+       Title NVARCHAR(255) null,
+       Subtitle NVARCHAR(255) null,
+       AllowsComments BIT null,
+       CreatedAt DATETIME null,
+       primary key (Id)
+    )
+
+    create table UsersBlogs (
+        BlogId INT not null,
+       UserId INT not null,
+       primary key (UserId, BlogId)
+    )
+
+    create table Categories (
+        Id INT not null,
+       Name NVARCHAR(255) null,
+       primary key (Id)
+    )
+
+    create table CategoriesPosts (
+        CategoryId INT not null,
+       PostId INT not null,
+       primary key (PostId, CategoryId)
+    )
+
+    create table Comments (
+        Id INT IDENTITY NOT NULL,
+       Name NVARCHAR(255) null,
+       Email NVARCHAR(255) null,
+       HomePage NVARCHAR(255) null,
+       Ip INT null,
+       Text NVARCHAR(255) null,
+       PostId INT null,
+       primary key (Id)
+    )
+
+    create table Posts (
+        Id INT IDENTITY NOT NULL,
+       Title NVARCHAR(255) null,
+       Text NVARCHAR(255) null,
+       PostedAt DATETIME null,
+       BlogId INT null,
+       UserId INT null,
+       primary key (Id)
+    )
+
+    create table Tags (
+        Id INT IDENTITY NOT NULL,
+       Name NVARCHAR(255) null,
+       ItemId INT null,
+       ItemType INT null,
+       primary key (Id)
+    )
+
+    create table Users (
+        Id INT IDENTITY NOT NULL,
+       Password VARBINARY(8000) null,
+       Username NVARCHAR(255) null,
+       Email NVARCHAR(255) null,
+       CreatedAt DATETIME null,
+       Bio NVARCHAR(255) null,
+       primary key (Id)
+    )
+
+    alter table UsersBlogs 
+        add constraint FK5A98FACFEBC226AF 
+        foreign key (UserId) 
+        references Users
+
+    alter table UsersBlogs 
+        add constraint FK5A98FACFBCB370B9 
+        foreign key (BlogId) 
+        references Blogs
+
+    alter table CategoriesPosts 
+        add constraint FKF1BF7CDDE7CD44A1 
+        foreign key (PostId) 
+        references Posts
+
+    alter table CategoriesPosts 
+        add constraint FKF1BF7CDD2FBD6C29 
+        foreign key (CategoryId) 
+        references Categories
+
+    alter table Comments 
+        add constraint FK740EB05CE7CD44A1 
+        foreign key (PostId) 
+        references Posts
+
+    alter table Posts 
+        add constraint FKD7AA788BBCB370B9 
+        foreign key (BlogId) 
+        references Blogs
+
+    alter table Posts 
+        add constraint FKD7AA788BEBC226AF 
+        foreign key (UserId) 
+        references Users
+
+    alter table Tags 
+        add constraint FK9061CD29AAACF2 
+        foreign key (ItemId) 
+        references Blogs
+.
+    if exists (select 1 from sys.objects where object_id = OBJECT_ID(N'[FK5A98FACFEBC226AF]') AND parent_object_id = OBJECT_ID('UsersBlogs'))
+alter table UsersBlogs  drop constraint FK5A98FACFEBC226AF
+
+
+    if exists (select 1 from sys.objects where object_id = OBJECT_ID(N'[FK5A98FACFBCB370B9]') AND parent_object_id = OBJECT_ID('UsersBlogs'))
+alter table UsersBlogs  drop constraint FK5A98FACFBCB370B9
+
+
+    if exists (select 1 from sys.objects where object_id = OBJECT_ID(N'[FKF1BF7CDDE7CD44A1]') AND parent_object_id = OBJECT_ID('CategoriesPosts'))
+alter table CategoriesPosts  drop constraint FKF1BF7CDDE7CD44A1
+
+
+    if exists (select 1 from sys.objects where object_id = OBJECT_ID(N'[FKF1BF7CDD2FBD6C29]') AND parent_object_id = OBJECT_ID('CategoriesPosts'))
+alter table CategoriesPosts  drop constraint FKF1BF7CDD2FBD6C29
+
+
+    if exists (select 1 from sys.objects where object_id = OBJECT_ID(N'[FK740EB05CE7CD44A1]') AND parent_object_id = OBJECT_ID('Comments'))
+alter table Comments  drop constraint FK740EB05CE7CD44A1
+
+
+    if exists (select 1 from sys.objects where object_id = OBJECT_ID(N'[FKD7AA788BBCB370B9]') AND parent_object_id = OBJECT_ID('Posts'))
+alter table Posts  drop constraint FKD7AA788BBCB370B9
+
+
+    if exists (select 1 from sys.objects where object_id = OBJECT_ID(N'[FKD7AA788BEBC226AF]') AND parent_object_id = OBJECT_ID('Posts'))
+alter table Posts  drop constraint FKD7AA788BEBC226AF
+
+
+    if exists (select 1 from sys.objects where object_id = OBJECT_ID(N'[FK9061CD29AAACF2]') AND parent_object_id = OBJECT_ID('Tags'))
+alter table Tags  drop constraint FK9061CD29AAACF2
+
+
+    if exists (select * from dbo.sysobjects where id = object_id(N'Blogs') and OBJECTPROPERTY(id, N'IsUserTable') = 1) drop table Blogs
+
+    if exists (select * from dbo.sysobjects where id = object_id(N'UsersBlogs') and OBJECTPROPERTY(id, N'IsUserTable') = 1) drop table UsersBlogs
+
+    if exists (select * from dbo.sysobjects where id = object_id(N'Categories') and OBJECTPROPERTY(id, N'IsUserTable') = 1) drop table Categories
+
+    if exists (select * from dbo.sysobjects where id = object_id(N'CategoriesPosts') and OBJECTPROPERTY(id, N'IsUserTable') = 1) drop table CategoriesPosts
+
+    if exists (select * from dbo.sysobjects where id = object_id(N'Comments') and OBJECTPROPERTY(id, N'IsUserTable') = 1) drop table Comments
+
+    if exists (select * from dbo.sysobjects where id = object_id(N'Posts') and OBJECTPROPERTY(id, N'IsUserTable') = 1) drop table Posts
+
+    if exists (select * from dbo.sysobjects where id = object_id(N'Tags') and OBJECTPROPERTY(id, N'IsUserTable') = 1) drop table Tags
+
+    if exists (select * from dbo.sysobjects where id = object_id(N'Users') and OBJECTPROPERTY(id, N'IsUserTable') = 1) drop table Users
+
+    create table Blogs (
+        Id INT IDENTITY NOT NULL,
+       Title NVARCHAR(255) null,
+       Subtitle NVARCHAR(255) null,
+       AllowsComments BIT null,
+       CreatedAt DATETIME null,
+       primary key (Id)
+    )
+
+    create table UsersBlogs (
+        BlogId INT not null,
+       UserId INT not null,
+       primary key (UserId, BlogId)
+    )
+
+    create table Categories (
+        Id INT not null,
+       Name NVARCHAR(255) null,
+       primary key (Id)
+    )
+
+    create table CategoriesPosts (
+        CategoryId INT not null,
+       PostId INT not null,
+       primary key (PostId, CategoryId)
+    )
+
+    create table Comments (
+        Id INT IDENTITY NOT NULL,
+       Name NVARCHAR(255) null,
+       Email NVARCHAR(255) null,
+       HomePage NVARCHAR(255) null,
+       Ip INT null,
+       Text NVARCHAR(255) null,
+       PostId INT null,
+       primary key (Id)
+    )
+
+    create table Posts (
+        Id INT IDENTITY NOT NULL,
+       Title NVARCHAR(255) null,
+       Text NVARCHAR(255) null,
+       PostedAt DATETIME null,
+       BlogId INT null,
+       UserId INT null,
+       primary key (Id)
+    )
+
+    create table Tags (
+        Id INT IDENTITY NOT NULL,
+       Name NVARCHAR(255) null,
+       ItemId INT null,
+       ItemType INT null,
+       primary key (Id)
+    )
+
+    create table Users (
+        Id INT IDENTITY NOT NULL,
+       Password VARBINARY(8000) null,
+       Username NVARCHAR(255) null,
+       Email NVARCHAR(255) null,
+       CreatedAt DATETIME null,
+       Bio NVARCHAR(255) null,
+       primary key (Id)
+    )
+
+    alter table UsersBlogs 
+        add constraint FK5A98FACFEBC226AF 
+        foreign key (UserId) 
+        references Users
+
+    alter table UsersBlogs 
+        add constraint FK5A98FACFBCB370B9 
+        foreign key (BlogId) 
+        references Blogs
+
+    alter table CategoriesPosts 
+        add constraint FKF1BF7CDDE7CD44A1 
+        foreign key (PostId) 
+        references Posts
+
+    alter table CategoriesPosts 
+        add constraint FKF1BF7CDD2FBD6C29 
+        foreign key (CategoryId) 
+        references Categories
+
+    alter table Comments 
+        add constraint FK740EB05CE7CD44A1 
+        foreign key (PostId) 
+        references Posts
+
+    alter table Posts 
+        add constraint FKD7AA788BBCB370B9 
+        foreign key (BlogId) 
+        references Blogs
+
+    alter table Posts 
+        add constraint FKD7AA788BEBC226AF 
+        foreign key (UserId) 
+        references Users
+
+    alter table Tags 
+        add constraint FK9061CD29AAACF2 
+        foreign key (ItemId) 
+        references Blogs
+.....4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+...4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+............The lazy blog
+..................4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+.4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+.................
+Total tests: 79, Failures: 0, Skipped: 0, Time: 509.615 seconds
+xUnit.net console test runner (64-bit .NET 2.0.50727.4927)
+Copyright (C) 2007-9 Microsoft Corporation.
+
+xunit.dll:     Version 1.5.0.1479
+Test assembly: C:\Builds\NHProf\build\HibernatingRhinos.NHibernate.Profiler.Java.IntegrationTests.dll
+
+..S.....................................
+Total tests: 40, Failures: 0, Skipped: 1, Time: 216.657 seconds
+
+Tests skipped:
+
+1) HibernatingRhinos.NHibernate.Profiler.Java.IntegrationTests.BugsFixture.Ticket263 : Not sure what is going on here!
+Executing task, Merge...
+Executing task, Release...
+Zipping to: C:\Builds\NHProf\Release\NHibernate.Profiler-1.0-Build-471.zip
+  adding: HibernatingRhinos.NHibernate.Profiler.Client.exe (160 bytes security) (deflated 45%)
+  adding: HibernatingRhinos.NHibernate.Profiler.Client.exe.config (160 bytes security) (deflated 60%)
+  adding: HibernatingRhinos.NHibernate.Profiler.Appender.dll (160 bytes security) (deflated 64%)
+  adding: HibernatingRhinos.NHibernate.Profiler.BackEnd.dll (160 bytes security) (deflated 60%)
+  adding: Esent.Interop.dll (160 bytes security) (deflated 61%)
+  adding: log4net.dll (160 bytes security) (deflated 64%)
+  adding: Microsoft.Practices.ServiceLocation.dll (160 bytes security) (deflated 69%)
+  adding: Caliburn.PresentationFramework.dll (160 bytes security) (deflated 62%)
+  adding: Caliburn.Core.dll (160 bytes security) (deflated 66%)
+  adding: AqiStar.TextBox.dll (160 bytes security) (deflated 69%)
+  adding: Xceed.Wpf.DataGrid.dll (160 bytes security) (deflated 73%)
+  adding: Xceed.Wpf.Controls.dll (160 bytes security) (deflated 67%)
+  adding: gudusoft.gsqlparser.dll (160 bytes security) (deflated 81%)
+  adding: license.txt (172 bytes security) (deflated 60%)
+  adding: How to use.txt (172 bytes security) (deflated 50%)
+  adding: Acknowledgments.txt (172 bytes security) (deflated 29%)
+  adding: hibernate-profiler-1.0.jar (160 bytes security) (deflated 9%)
+Executing task, upload...
+Starting upload
+could not find upload script , skipping upload
+
+
+BUILD SUCCESSFULL
