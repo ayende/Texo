@@ -108,7 +108,7 @@ else # need new updates
     }
     cd $workingDir
     
-    git sumbodule init
+    git submodule init
     git submodule update
 }
 
