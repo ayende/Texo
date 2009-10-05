@@ -92,6 +92,7 @@ if(Test-Path $workingDir/.git)  # repository exists
     {
       $body = $git_log -join "`r`n"
       send_email -subject "Failed to update repository: $name" -body $body
+      exit
     }
     git submodule update
 }
@@ -103,6 +104,7 @@ else # need new updates
     {
       $body = $git_log -join "`r`n"
       send_email -subject "Failed to clone repository: $name" -body $body
+      exit
     }
     cd $workingDir
     
