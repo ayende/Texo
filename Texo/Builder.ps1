@@ -122,7 +122,7 @@ $env:ccnetnumericlabel = $build
 $env:buildlabel = $build
 
 write-host "Build started for $name"
-send_email -subject "Build started for $name " -body "Starting build for $name for:`r`nlog"
+send_email -subject "Build started for $name " -body "Starting build for $name for:`r`n$log"
 $error.Clear()
 $buildStart = [DateTime]::Now
 $output = Invoke-Expression "$cmd 2>&1"  -ErrorAction silentlycontinue
