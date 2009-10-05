@@ -33,7 +33,6 @@ function load_settings([string]$url)
         {   
             continue; 
         }
-        write-host "Found settings for $url: $project.name" 
         $global:git = $project.git
         $global:cmd = $project.cmd
         $global:workingDir = $project.workingDir
@@ -41,6 +40,8 @@ function load_settings([string]$url)
         $global:name = $project.name
         $global:build = $project.build
         $project.build = ([int]::Parse($project.build) + 1).ToString()
+        
+        write-host "Found settings for $url: $name" 
         
         $writerSettings = new-object System.Xml.XmlWriterSettings
         $writerSettings.OmitXmlDeclaration = $true
@@ -87,15 +88,26 @@ if(Test-Path $workingDir/.git)  # repository exists
     Write-Host "Fetching updates from $git"
     cd $workingDir
     git pull
+    if($lastExitCode -ne 0)
+    {
+      $body = $git_log -join "`r`n"
+      send_email -subject "Failed to update repository: $name" -body $body
+    }
     git submodule update
 }
 else # need new updates
 {
     Write-Host "Clone git repository from $git"
-    git clone $git $workingDir
+    $git_log = git clone $git $workingDir
+    if($lastExitCode -ne 0)
+    {
+      $body = $git_log -join "`r`n"
+      send_email -subject "Failed to clone repository: $name" -body $body
+    }
+    cd $workingDir
+    
     git sumbodule init
     git sumdoule update
-    cd $workingDir
 }
 
 $log = $env:push_msg 
