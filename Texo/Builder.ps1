@@ -109,13 +109,13 @@ else # need new updates
     cd $workingDir
     
     git sumbodule init
-    git sumdoule update
+    git submodule update
 }
 
 $log = $env:push_msg 
 if($log -eq $null -or $log.Length -eq 0)
 {
-    git log -1 --oneline
+    $log = git log -1 --oneline
 }
 
 $env:ccnetnumericlabel = $build
