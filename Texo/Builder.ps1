@@ -92,15 +92,16 @@ function send_email([string]$subject, [string]$body)
 
 load_settings($url)
 
-
+$git_log = ""
 if(Test-Path $workingDir/.git)  # repository exists
 {
-    Write-Host "Fetching updates from $git"
+    Write-Host "Fetching updates from $git as $env:username"
     cd $workingDir
-    git pull
+    $git_log = git pull 2>&1
     if($lastExitCode -ne 0)
     {
       $body = $git_log -join "`r`n"
+      write-host $body
       send_email -subject "Failed to update repository: $name" -body $body
       exit
     }
@@ -108,11 +109,12 @@ if(Test-Path $workingDir/.git)  # repository exists
 }
 else # need new updates
 {
-    Write-Host "Clone git repository from $git"
-    $git_log = git clone $git $workingDir
+    Write-Host "Clone git repository from $git as $env:username"
+    $git_log = git clone $git $workingDir 2>&1
     if($lastExitCode -ne 0)
     {
       $body = $git_log -join "`r`n"
+      write-host $body
       send_email -subject "Failed to clone repository: $name" -body $body
       exit
     }
@@ -121,6 +123,9 @@ else # need new updates
     git submodule init
     git submodule update
 }
+
+write-output $git_log
+write-host "done updating from repository" 
 
 $log = $env:push_msg 
 if($log -eq $null -or $log.Length -eq 0)
