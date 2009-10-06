@@ -24,6 +24,9 @@ function load_settings([string]$url)
        write-error $_.Exception
        exit
     }
+    $mutex = new-object System.Threading.Mutex($settingsFile)
+    $mutex.WaitOne()
+        
     $settingsFile = [System.IO.Path]::Combine([System.IO.Path]::GetDirectoryName($MyInvocation.ScriptName), "Settings.config")
     $settings = [xml](get-content $settingsFile)
     $currentProjects = ""
@@ -44,8 +47,6 @@ function load_settings([string]$url)
         
         write-host "Found settings for $url: $name" 
         
-        $mutex = new-object System.Threading.Mutex($settingsFile)
-        $mutex.WaitOne()
         
         $writerSettings = new-object System.Xml.XmlWriterSettings
         $writerSettings.OmitXmlDeclaration = $true
@@ -56,6 +57,7 @@ function load_settings([string]$url)
         
         $settings.WriteTo($writer)
         $writer.Flush()
+        $writer.Close()
         
         $mutex.ReleaseMutex()
         $mutex.Close()
