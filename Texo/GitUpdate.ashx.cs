@@ -19,7 +19,7 @@ namespace Texo
 			var processStartInfo = new ProcessStartInfo
 			{
 				FileName = "powershell.exe",
-				Arguments = ".\\builder.ps1 -url \"" + notification.Url + "\"",
+				Arguments = ".\\builder.ps1 -url \"" + notification.Url + "\" -ref \""+notification.Ref +"\"",
 				WorkingDirectory = AppDomain.CurrentDomain.BaseDirectory,
 				UseShellExecute = false,
 				RedirectStandardOutput = true,

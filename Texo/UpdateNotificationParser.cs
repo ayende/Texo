@@ -12,6 +12,7 @@ namespace Texo
 			var reader = new JsonTextReader(new StringReader(payload));
 			var update = (JObject) new JsonSerializer().Deserialize(reader);
 			Url = update["repository"]["url"].Value<string>();
+			Ref = update["ref"].Value<string>();
 
 			var sb = new StringBuilder();
 
@@ -27,5 +28,6 @@ namespace Texo
 
 		public string PushMessage { get; private set; }
 		public string Url { get; set; }
+		public string Ref { get; set; }
 	}
 }

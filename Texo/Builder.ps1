@@ -1,5 +1,6 @@
 param(
-  [string]$url
+  [string]$url,
+  [string]$ref
 )
 
 #reset global vars - useful when we execute for psh, because it reset the previous run values
@@ -29,7 +30,7 @@ function load_settings([string]$url)
     foreach ($project in $settings.settings.project)
     {
         $currentProjects += $currentProjects + "`r`n"
-        if($project.url -ne $url)
+        if($project.url -ne $url -or $project.ref -ne $ref)
         {   
             continue; 
         }
@@ -43,6 +44,9 @@ function load_settings([string]$url)
         
         write-host "Found settings for $url: $name" 
         
+        $mutex = new-object System.Threading.Mutex($settingsFile)
+        $mutex.WaitOne()
+        
         $writerSettings = new-object System.Xml.XmlWriterSettings
         $writerSettings.OmitXmlDeclaration = $true
         $writerSettings.NewLineOnAttributes = $true
@@ -52,10 +56,14 @@ function load_settings([string]$url)
         
         $settings.WriteTo($writer)
         $writer.Flush()
+        
+        $mutex.ReleaseMutex()
+        $mutex.Close()
+        
         return
     }
     
-    $body = "Got a notification about a build for $url, but could not find a matching project to build with`r`nCurrentProjects`r`n"+$currentProjects
+    $body = "Got a notification about a build for $url ($ref), but could not find a matching project to build with`r`nCurrentProjects`r`n"+$currentProjects
     send_email -subject "Could not find matching project for $url" -body $body
     write-error "Could not find matching project for $url"
 
