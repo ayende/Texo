@@ -143,7 +143,7 @@ $buildStart = [DateTime]::Now
 $output = Invoke-Expression "$cmd 2>&1"  -ErrorAction silentlycontinue
 if ($error.Count -gt 0 -or $lastexitcode -ne 0) 
 {
-    $body = "Build failed for $name. Duration $([DateTime]::Now - $buildStart) for:`r`n$log`r`n`r`nBuild Log:`r`n" + ($output -join "`r`n")
+    $body = "Build failed for $name. Duration $([DateTime]::Now - $buildStart) for:`r`n$log`r`n`r`nBuild Log:`r`n" + ($output -join "`r`n") + "`r`n$($error.Count) Errors: " + ($error -join "`r`n")
     write-host $body
     send_email -subject "Build FAILED for $name" -body $body
     write-host "BUILD FAILED"
