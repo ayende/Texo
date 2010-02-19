@@ -105,7 +105,10 @@ if(Test-Path $workingDir/.git)  # repository exists
       send_email -subject "Failed to update repository: $name" -body $body
       exit
     }
+    git submodule init
+    git submodule sync
     git submodule update
+
 }
 else # need new updates
 {
@@ -121,6 +124,7 @@ else # need new updates
     cd $workingDir
     
     git submodule init
+    git submodule sync
     git submodule update
 }
 
