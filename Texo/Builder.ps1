@@ -174,22 +174,22 @@ $env:ccnetnumericlabel = $build
 $env:buildlabel = $build
 
 write-host "Build started for $name $ref"
-send_email -subject "Build started for $name $ref" -body "Starting build for $name for:`r`n$log"
+send_email -subject "Build started for $name $ref ($global:build)" -body "Starting build for $name for:`r`n$log"
 $error.Clear()
 $buildStart = [DateTime]::Now
 $output = Invoke-Expression "$cmd 2>&1"  -ErrorAction silentlycontinue
 if ($error.Count -gt 0 -or $lastexitcode -ne 0) 
 {
-    $body = "Build failed for $name $ref. Duration $([DateTime]::Now - $buildStart) for:`r`n$log`r`n`r`nBuild Log:`r`n" + ($output -join "`r`n") + "`r`n$($error.Count) Errors: " + ($error -join "`r`n")
+    $body = "Build failed for $name $ref ($global:build). Duration $([DateTime]::Now - $buildStart) for:`r`n$log`r`n`r`nBuild Log:`r`n" + ($output -join "`r`n") + "`r`n$($error.Count) Errors: " + ($error -join "`r`n")
     write-host $body
     send_email -subject "Build FAILED for $name" -body $body
     write-host "BUILD FAILED"
 }
 else
 {
-   $body = "Build passed for $name $ref. Duration $([DateTime]::Now - $buildStart) for:`r`n$log`r`n`r`n" + ($output -join "`r`n")
+   $body = "Build passed for $name $ref ($global:build). Duration $([DateTime]::Now - $buildStart) for:`r`n$log`r`n`r`n" + ($output -join "`r`n")
    write-host $body
-   send_email -subject "Build SUCCESSFULL for $name" -body $body
+   send_email -subject "Build SUCCESSFULL for $name ($global:build)" -body $body
    write-host "BUILD SUCCESSFULL"
 }
 
