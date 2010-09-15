@@ -28,6 +28,7 @@ function load_settings([string]$url)
     $mutex.WaitOne()
         
     $settingsFile = [System.IO.Path]::Combine([System.IO.Path]::GetDirectoryName($MyInvocation.ScriptName), "Settings.config")
+    
     $settings = [xml](get-content $settingsFile)
     $currentProjects = ""
     foreach ($project in $settings.settings.project)
@@ -92,12 +93,21 @@ function send_email([string]$subject, [string]$body)
 
 load_settings($url)
 
+
+
+
+
+
+$parts = $ref.Split('/')
+$branch = $parts[$parts.Length -1]
+
 $git_log = ""
 if(Test-Path $workingDir/.git)  # repository exists
 {
-    Write-Host "Fetching updates from $git as $env:username"
+    Write-Host "Fetching updates from $git /  $branch as $env:username"
     cd $workingDir
-    $git_log = git pull 2>&1
+    $git_log = git pull origin $branch
+    Write-Host $git_log
     if($lastExitCode -ne 0)
     {
       $body = $git_log -join "`r`n"
@@ -105,14 +115,15 @@ if(Test-Path $workingDir/.git)  # repository exists
       send_email -subject "Failed to update repository: $name" -body $body
       exit
     }
+    
+    
     git submodule init
-    git submodule sync
     git submodule update
-
 }
 else # need new updates
 {
     Write-Host "Clone git repository from $git as $env:username"
+
     $git_log = git clone $git $workingDir 2>&1
     if($lastExitCode -ne 0)
     {
@@ -122,11 +133,23 @@ else # need new updates
       exit
     }
     cd $workingDir
+    if( $branch -ne "master" ) {  # need to checkout the branch
+		$git_log = git checkout remotes/origin/$branch -b $branch
+	    $co_exit_code = $lastExitCode
+        $body = $git_log -join "`r`n"
+        write-host $body
+          
+        if($co_exit_code -ne 0)
+        {
+          send_email -subject "Failed to clone repository: $name, could not switch branch to $branch" -body $body
+          exit
+        }
+    } 
     
     git submodule init
-    git submodule sync
     git submodule update
 }
+
 
 write-output $git_log
 write-host "done updating from repository" 
@@ -140,21 +163,21 @@ if($log -eq $null -or $log.Length -eq 0)
 $env:ccnetnumericlabel = $build
 $env:buildlabel = $build
 
-write-host "Build started for $name"
-send_email -subject "Build started for $name " -body "Starting build for $name for:`r`n$log"
+write-host "Build started for $name $ref"
+send_email -subject "Build started for $name $ref" -body "Starting build for $name for:`r`n$log"
 $error.Clear()
 $buildStart = [DateTime]::Now
 $output = Invoke-Expression "$cmd 2>&1"  -ErrorAction silentlycontinue
 if ($error.Count -gt 0 -or $lastexitcode -ne 0) 
 {
-    $body = "Build failed for $name. Duration $([DateTime]::Now - $buildStart) for:`r`n$log`r`n`r`nBuild Log:`r`n" + ($output -join "`r`n") + "`r`n$($error.Count) Errors: " + ($error -join "`r`n")
+    $body = "Build failed for $name $ref. Duration $([DateTime]::Now - $buildStart) for:`r`n$log`r`n`r`nBuild Log:`r`n" + ($output -join "`r`n") + "`r`n$($error.Count) Errors: " + ($error -join "`r`n")
     write-host $body
     send_email -subject "Build FAILED for $name" -body $body
     write-host "BUILD FAILED"
 }
 else
 {
-   $body = "Build passed for $name. Duration $([DateTime]::Now - $buildStart) for:`r`n$log`r`n`r`n" + ($output -join "`r`n")
+   $body = "Build passed for $name $ref. Duration $([DateTime]::Now - $buildStart) for:`r`n$log`r`n`r`n" + ($output -join "`r`n")
    write-host $body
    send_email -subject "Build SUCCESSFULL for $name" -body $body
    write-host "BUILD SUCCESSFULL"
