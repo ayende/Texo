@@ -43,9 +43,19 @@ function load_settings([string]$url)
         $global:workingDir = $project.workingDir
         $global:email = $project.email
         $global:name = $project.name
-        $global:build = $project.build
-        $project.build = ([int]::Parse($project.build) + 1).ToString()
         
+        foreach($build in $settings.settings.builds.project)
+        {
+            if($build.name -ne $project.name)
+            {   
+                continue; 
+            }
+             
+            $global:build = $build.build
+            $build.build = ([int]::Parse($build.build) + 1).ToString()
+            break;
+        }
+         
         write-host "Found settings for $url: $name" 
         
         
