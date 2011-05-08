@@ -68,6 +68,9 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GitRefresh.ashx.cs">
+      <DependentUpon>GitRefresh.ashx</DependentUpon>
+    </Compile>
     <Compile Include="GitUpdate.ashx.cs">
       <DependentUpon>GitUpdate.ashx</DependentUpon>
     </Compile>
@@ -77,6 +80,8 @@
   <ItemGroup>
     <Content Include="GitUpdate.ashx" />
     <Content Include="Readme.txt" />
+    <Content Include="GitRefresh.ashx" />
+    <None Include="Refresher.ps1" />
     <None Include="Settings.config" />
   </ItemGroup>
   <ItemGroup>
