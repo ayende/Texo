@@ -1,7 +1,7 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Texo", "Texo\Texo.csproj", "{21C88ED7-1FCF-46B2-AEA8-B38C46F79701}"
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{00000000-0000-0000-0000-000000000000}") = "Texo", "Texo\Texo.csproj", "{21C88ED7-1FCF-46B2-AEA8-B38C46F79701}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
