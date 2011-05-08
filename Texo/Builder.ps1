@@ -24,6 +24,7 @@ function load_settings([string]$url)
        write-error $_.Exception
        exit
     }
+    
     $mutex = new-object System.Threading.Mutex($settingsFile)
     $mutex.WaitOne()
         
@@ -43,6 +44,9 @@ function load_settings([string]$url)
         $global:workingDir = $project.workingDir
         $global:email = $project.email
         $global:name = $project.name
+        Write-Host $project.email
+        Write-Host $project
+        Write-Host $global:email
         
         foreach($build in $settings.settings.builds.project)
         {
@@ -85,20 +89,22 @@ function load_settings([string]$url)
 
 function send_email([string]$subject, [string]$body)
 {  
-    trap [Exception] {
-       write-error $_.Exception
-       exit
-    }
-    $settingsFile = [System.IO.Path]::Combine([System.IO.Path]::GetDirectoryName($MyInvocation.ScriptName), "Settings.config")
-    $settings= [xml](get-content $settingsFile)
-    $emailSettings = $settings.settings.email
-    $smtp = new-object System.Net.Mail.SmtpClient
-    $smtp.Host = $emailSettings.smtpServer
-    $smtp.Port = $emailSettings.port
-    $smtp.EnableSsl = $emailSettings.useSSL
-    $smtp.Credentials = new-object System.Net.NetworkCredential($emailSettings.username, $emailSettings.password)
-    $smtp.Send($emailSettings.from,$email, $subject, $body)
-    
+    Write-Host $subject
+    if($global:email -ne $null){
+        trap [Exception] {
+           write-error $_.Exception
+           exit
+        }
+        $settingsFile = [System.IO.Path]::Combine([System.IO.Path]::GetDirectoryName($MyInvocation.ScriptName), "Settings.config")
+        $settings= [xml](get-content $settingsFile)
+        $emailSettings = $settings.settings.email
+        $smtp = new-object System.Net.Mail.SmtpClient
+        $smtp.Host = $emailSettings.smtpServer
+        $smtp.Port = $emailSettings.port
+        $smtp.EnableSsl = $emailSettings.useSSL
+        $smtp.Credentials = new-object System.Net.NetworkCredential($emailSettings.username, $emailSettings.password)
+        $smtp.Send($emailSettings.from, $global:email, $subject, $body)
+    }   
 }
 
 load_settings($url)
@@ -112,7 +118,7 @@ $parts = $ref.Split('/')
 $branch = $parts[$parts.Length -1]
 
 $git_log = ""
-if(Test-Path $workingDir/.git)  # repository exists
+if(Test-Path $workingDir/.git)  # repository exists, try updating or nuke if failed
 {
     Write-Host "Fetching updates from $git /  $branch as $env:username"
     cd $workingDir
@@ -123,14 +129,17 @@ if(Test-Path $workingDir/.git)  # repository exists
       $body = $git_log -join "`r`n"
       write-host $body
       send_email -subject "Failed to update repository: $name" -body $body
-      exit
+      cd ..
+      Remove-Item $workingDir -force -recurse 
+      send_email -subject "Nuking repo and trying fresh clone: $name" -body $body
     }
-    
-    
-    git submodule init
-    git submodule update
+    else 
+    {
+        git submodule init
+        git submodule update
+    }
 }
-else # need new updates
+if( (Test-Path $workingDir/.git) -eq $false ) # need new updates
 {
     Write-Host "Clone git repository from $git as $env:username"
 
